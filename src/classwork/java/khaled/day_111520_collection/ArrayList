@@ -1,0 +1,183 @@
+Java ArrayList:
+===============
+     - Java ArrayList class uses a dynamic array for storing the elements. It is like an array, but there is no size limit.
+     - We can add or remove elements anytime. So, it is much more flexible than the traditional array. It is found in the java.util package.
+        It is like the Vector in C++.
+     - The ArrayList in Java can have the duplicate elements also. It implements the List interface so we can use all the methods of List interface here.
+        The ArrayList maintains the insertion order internally.
+     - It inherits the AbstractList class and implements List interface.
+
+The important points about Java ArrayList class are:
+----------------------------------------------------
+     - Java ArrayList class can contain duplicate elements.
+     - Java ArrayList class maintains insertion order.  FIFO - First In First Out
+     - Java ArrayList class is non synchronized.
+     - Java ArrayList allows random access because array works at the index basis.
+     - In ArrayList, manipulation is little bit slower than the LinkedList in Java because a lot of shifting needs to occur if any element is removed
+        from the array list.
+
+
+ArrayList declaration:
+----------------------------
+    ArrayList<String> list=new ArrayList<String>();
+
+
+Methods of ArrayList:
+---------------------
+
+    void add(int index, E element)	                            --> It is used to insert the specified element at the specified position in a list.
+    boolean add(E e)	                                        --> It is used to append the specified element at the end of a list.
+    boolean addAll(Collection<? extends E> c)	                --> It is used to append all of the elements in the specified collection to the end of
+                                                                    this list, in the order that they are returned by the specified collection's iterator.
+    boolean addAll(int index, Collection<? extends E> c)	    --> It is used to append all the elements in the specified collection, starting at the
+                                                                    specified position of the list.
+    void clear()	                                            --> It is used to remove all of the elements from this list.
+    void ensureCapacity(int requiredCapacity)	                --> It is used to enhance the capacity of an ArrayList instance.
+    E get(int index)	                                        --> It is used to fetch the element from the particular position of the list.
+    boolean isEmpty()	                                        --> It returns true if the list is empty, otherwise false.
+    Iterator()
+    listIterator()
+    int lastIndexOf(Object o)	                                --> It is used to return the index in this list of the last occurrence of the specified element,
+                                                                    or -1 if the list does not contain this element.
+    Object[] toArray()	                                        --> It is used to return an array containing all of the elements in this list in the correct order.
+    <T> T[] toArray(T[] a)	                                    --> It is used to return an array containing all of the elements in this list in the correct order.
+    Object clone()	                                            --> It is used to return a shallow copy of an ArrayList.
+    boolean contains(Object o)	                                --> It returns true if the list contains the specified element
+    int indexOf(Object o)	                                    --> It is used to return the index in this list of the first occurrence of the specified element,
+                                                                    or -1 if the List does not contain this element.
+    E remove(int index)	                                        --> It is used to remove the element present at the specified position in the list.
+    boolean remove(Object o)	                                --> It is used to remove the first occurrence of the specified element.
+    boolean removeAll(Collection<?> c)	                        --> It is used to remove all the elements from the list.
+    boolean removeIf(Predicate<? super E> filter)	            --> It is used to remove all the elements from the list that satisfies the given predicate.
+    protected void removeRange(int fromIndex, int toIndex)	    --> It is used to remove all the elements lies within the given range.
+    void replaceAll(UnaryOperator<E> operator)	                --> It is used to replace all the elements from the list with the specified element.
+    void retainAll(Collection<?> c)	                            --> It is used to retain all the elements in the list that are present in the specified collection.
+    E set(int index, E element)	                                --> It is used to replace the specified element in the list, present at the specified position.
+    void sort(Comparator<? super E> c)	                        --> It is used to sort the elements of the list on the basis of specified comparator.
+    Spliterator<E> spliterator()	                            --> It is used to create spliterator over the elements in a list.
+    List<E> subList(int fromIndex, int toIndex)	                --> It is used to fetch all the elements lies within the given range.
+    int size()	                                                --> It is used to return the number of elements present in the list.
+    void trimToSize()	                                        --> It is used to trim the capacity of this ArrayList instance to be the list's current size.
+
+
+Ways to iterate the elements of the collection in Java:
+--------------------------------------------------------
+     - There are various ways to traverse the collection elements:
+
+        # By Iterator interface.
+        # By for-each loop.
+        # By ListIterator interface.
+        # By for loop.
+        # By forEach() method.
+        # By forEachRemaining() method.
+
+
+Java ArrayList Example:
+-----------------------
+    import java.util.*;
+     public class ArrayListExample1{
+     public static void main(String args[]){
+      ArrayList<String> list=new ArrayList<String>();//Creating arraylist
+          list.add("Mango");//Adding object in arraylist
+          list.add("Apple");
+          list.add("Banana");
+          list.add("Grapes");
+          //Printing the arraylist object
+          System.out.println(list);
+     }
+    }
+
+Output: [Mango, Apple, Banana, Grapes]
+
+Iterating ArrayList using Iterator:
+-----------------------------------
+    import java.util.*;
+    public class ArrayListExample2{
+     public static void main(String args[]){
+      ArrayList<String> list=new ArrayList<String>();//Creating arraylist
+      list.add("Mango");//Adding object in arraylist
+      list.add("Apple");
+      list.add("Banana");
+      list.add("Grapes");
+      //Traversing list through Iterator
+      Iterator itr=list.iterator();//getting the Iterator
+      while(itr.hasNext()){//check if iterator has the elements
+       System.out.println(itr.next());//printing the element and move to next
+      }
+     }
+    }
+
+Output:
+    Mango
+    Apple
+    Banana
+    Grapes
+
+Iterating ArrayList using For-each loop:
+----------------------------------------
+    import java.util.*;
+    public class ArrayListExample3{
+     public static void main(String args[]){
+      ArrayList<String> list=new ArrayList<String>();//Creating arraylist
+      list.add("Mango");//Adding object in arraylist
+      list.add("Apple");
+      list.add("Banana");
+      list.add("Grapes");
+      //Traversing list through for-each loop
+      for(String fruit:list)
+        System.out.println(fruit);
+
+     }
+    }
+
+
+Output:
+    Mango
+    Apple
+    Banana
+    Grapes
+
+
+User-defined class objects in Java ArrayList:
+---------------------------------------------
+Student Class:
+---------------
+    class Student{
+      int rollno;
+      String name;
+      int age;
+      Student(int rollno,String name,int age){
+       this.rollno=rollno;
+       this.name=name;
+       this.age=age;
+      }
+    }
+
+StudentArrayListDemo:
+---------------------
+    import java.util.*;
+     class StudentArrayListDemo{
+     public static void main(String args[]){
+      //Creating user-defined class objects
+      Student s1=new Student(101,"David",23);
+      Student s2=new Student(102,"Kevin",21);
+      Student s2=new Student(103,"Stacy",25);
+      //creating arraylist
+      ArrayList<Student> al=new ArrayList<Student>();
+      al.add(s1);//adding Student class object
+      al.add(s2);
+      al.add(s3);
+      //Getting Iterator
+      Iterator itr=al.iterator();
+      //traversing elements of ArrayList object
+      while(itr.hasNext()){
+        Student st=(Student)itr.next();
+        System.out.println(st.rollno+" "+st.name+" "+st.age);
+      }
+     }
+    }
+
+Output:
+        101 David 23
+        102 Kevin 21
+        103 Stacy 25

@@ -1,0 +1,83 @@
+Abstract class in Java:
+-----------------------
+    - A class which is declared with the abstract keyword is known as an abstract class in Java.
+    - It can have abstract and non-abstract methods (method with the body).
+
+Abstraction in Java:
+--------------------
+    - Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+    - Another way, it shows only essential things to the user and hides the internal details, for example,
+        sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery.
+    - Abstraction lets you focus on what the object does instead of how it does it.
+
+Ways to achieve Abstraction:
+----------------------------
+There are two ways to achieve abstraction in java
+    - Abstract class (0 to 100%)
+    - Interface (100%)
+
+Abstract class in Java:
+-----------------------
+    - A class which is declared as abstract is known as an abstract class. It can have abstract and non-abstract methods.
+    - It needs to be extended and its method implemented.
+    - It cannot be instantiated.
+    - An abstract class can have a data member, abstract method, method body (non-abstract method), constructor, and even main() method.
+
+Points to Remember:
+-------------------
+    - An abstract class must be declared with an abstract keyword.
+    - It can have abstract and non-abstract methods.
+    - It cannot be instantiated.
+    - It can have constructors and static methods also.
+    - It can have final methods which will force the subclass not to change the body of the method.
+
+Abstract Method in Java:
+------------------------
+    - A method which is declared as abstract and does not have implementation is known as an abstract method.
+
+
+Interface in Java:
+------------------
+    - An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+    - The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body.
+    - It is used to achieve abstraction and multiple inheritance in Java.
+    - In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body.
+    - Java Interface also represents the IS-A relationship.
+    - It cannot be instantiated just like the abstract class.
+    - Since Java 8, we can have default and static methods in an interface.
+    - Since Java 9, we can have private methods in an interface.
+
+
+Why use Java interface:
+-----------------------
+There are mainly three reasons to use interface. They are given below.
+
+    - It is used to achieve abstraction.
+    - By interface, we can support the functionality of multiple inheritance.
+    - It can be used to achieve loose coupling.
+
+How to declare an interface:
+----------------------------
+    - An interface is declared by using the interface keyword.
+    - It provides total abstraction; means all the methods in an interface are declared with the empty body, and all the fields are public,
+        static and final by default.
+    - A class that implements an interface must implement all the methods declared in the interface.
+
+Encapsulation in Java:
+----------------------
+    - Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+    - We can create a fully encapsulated class in Java by making all the data members of the class private.
+        Now we can use setter and getter methods to set and get the data in it.
+    - The Java Bean class is the example of a fully encapsulated class.
+
+Advantage of Encapsulation in Java:
+-----------------------------------
+    - By providing only a setter or getter method, you can make the class read-only or write-only.
+        In other words, you can skip the getter or setter methods.
+    - It provides you the control over the data.
+        Suppose you want to set the value of id which should be greater than 100 only, you can write the logic inside the setter method.
+        You can write the logic not to store the negative numbers in the setter methods.
+    - It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members.
+    - The encapsulate class is easy to test. So, it is better for unit testing.
+    - The standard IDE's are providing the facility to generate the getters and setters.
+        So, it is easy and fast to create an encapsulated class in Java.

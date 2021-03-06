@@ -1,0 +1,99 @@
+Java Hashtable class:
+======================
+Java Hashtable class implements a hashtable, which maps keys to values. It inherits Dictionary class and implements the Map interface.
+
+Points to remember:
+-------------------
+    A Hashtable is an array of a list. Each list is known as a bucket. The position of the bucket is identified by calling the hashcode()
+        method. A Hashtable contains values based on the key.
+    Java Hashtable class contains unique elements.
+    Java Hashtable class doesn't allow null key or value.
+    Java Hashtable class is synchronized.
+    The initial default capacity of Hashtable class is 11 whereas loadFactor is 0.75.
+
+
+Constructors of Java Hashtable class:
+-------------------------------------
+Constructor	                                    Description
+Hashtable()	                                    It creates an empty hashtable having the initial default capacity and load factor.
+Hashtable(int capacity)	                        It accepts an integer parameter and creates a hash table that contains a specified initial capacity.
+Hashtable(int capacity, float loadFactor)	    It is used to create a hash table having the specified initial capacity and loadFactor.
+Hashtable(Map<? extends K,? extends V> t)	    It creates a new hash table with the same mappings as the given Map.
+
+
+
+Java Hashtable Example:
+-----------------------
+    import java.util.*;
+    class Hashtable1{
+     public static void main(String args[]){
+      Hashtable<Integer,String> hm=new Hashtable<Integer,String>();
+
+      hm.put(100,"Amit");
+      hm.put(102,"Ravi");
+      hm.put(101,"Vijay");
+      hm.put(103,"Rahul");
+
+      for(Map.Entry m:hm.entrySet()){
+       System.out.println(m.getKey()+" "+m.getValue());
+      }
+     }
+    }
+
+
+ Java Hashtable Example: remove():
+ ---------------------------------
+     import java.util.*;
+     public class Hashtable2 {
+        public static void main(String args[]) {
+       Hashtable<Integer,String> map=new Hashtable<Integer,String>();
+          map.put(100,"Amit");
+          map.put(102,"Ravi");
+          map.put(101,"Vijay");
+          map.put(103,"Rahul");
+          System.out.println("Before remove: "+ map);
+            // Remove value for key 102
+            map.remove(102);
+            System.out.println("After remove: "+ map);
+        }
+     }
+
+
+
+Java Hashtable Example: Book:
+-----------------------------
+    import java.util.*;
+    class Book {
+        int id;
+        String name,author,publisher;
+        int quantity;
+        public Book(int id, String name, String author, String publisher, int quantity) {
+            this.id = id;
+            this.name = name;
+            this.author = author;
+            this.publisher = publisher;
+            this.quantity = quantity;
+        }
+    }
+
+public class HashtableExample {
+    public static void main(String[] args) {
+        //Creating map of Books
+        Map<Integer,Book> map=new Hashtable<Integer,Book>();
+        //Creating Books
+        Book b1=new Book(101,"Let us C","Yashwant Kanetkar","BPB",8);
+        Book b2=new Book(102,"Data Communications & Networking","Forouzan","Mc Graw Hill",4);
+        Book b3=new Book(103,"Operating System","Galvin","Wiley",6);
+        //Adding Books to map
+        map.put(1,b1);
+        map.put(2,b2);
+        map.put(3,b3);
+        //Traversing map
+        for(Map.Entry<Integer, Book> entry:map.entrySet()){
+            int key=entry.getKey();
+            Book b=entry.getValue();
+            System.out.println(key+" Details:");
+            System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);
+        }
+    }
+}
